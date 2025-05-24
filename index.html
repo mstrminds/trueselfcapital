@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swan Private Capital</title>
+  <link rel="icon" href="favicon.png" type="image/x-icon"> <!-- Favicon -->
+
+  <style>
+    @font-face {
+      font-family: 'Rise of Kingdom';
+      src: url('Rise of Kingdom.ttf') format('truetype');
+      font-weight: 700;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('background.jpg') no-repeat top left;
+      background-size: 220vh;
+      background-attachment: scroll;
+      font-family: Robecha Daniera-Regular.ttf, sans-serif;
+    }
+
+    .floating-banner {
+      position: absolute;
+      top: 110vh;
+      left: 10vw;
+      width: 80vw;
+      background: url('background.png') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 1.57vw;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1.3vw;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    @media (max-width: 768px) {
+      .floating-banner {
+        font-size: 2.5vw;
+        top: 80vh;
+      }
+    }
+
+    .middle-banner {
+      width: 100vw;
+      background-color: #333;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      box-sizing: border-box;
+      margin-top: 20.3vw;
+      min-height: 70vh;
+    }
+
+    .middle-banner-text {
+      display: flex;
+      justify-content: space-between;
+      width: 100vw;
+      max-width: 100vw;
+      padding: 1.57vw;
+    }
+
+    .middle-banner-text div {
+      width: 50vw;
+      padding: 4.71vw;
+      color: #ffffff;
+      font-size: 14px;
+    }
+
+    .bottom-section {
+      background: url('bottom.png') no-repeat left;
+      background-size: 100% auto;
+      height: 30vh;
+      margin-top: 0vh;
+      position: relative;
+      top: 0;
+    }
+
+    @media (max-width: 768px) {
+      .bottom-section {
+        height: 6vh;
+      }
+    }
+
+    .footer-banner {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.2vw;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Banner with Text Shadow -->
+  <div id="floating-banner" class="floating-banner">
+    Loading content...
+  </div>
+
+  <!-- Content Placeholder for Scrolling -->
+  <div style="height: 100vh;"></div>
+
+  <!-- Middle Banner Section with Dark Gray Background -->
+  <div class="middle-banner">
+    <div class="middle-banner-text">
+      <div>
+        <b>Minimum Subscription</b><br>
+        $1,000,000<br><br>
+        <b>Lock-up Period</b><br>
+        4 years<br><br>
+        <b>Withdrawals</b><br>
+        All or part, with thirty (30) calendar days written notice<br>
+      </div>
+      <div>
+        <b>Management fee</b><br>
+        None*<br><br>
+        <b>Performance fee*</b><br>
+        None for first +8% returns, 50/50 split after the first +8%, annually.<br><br>
+        <b>Contact us</b><br>
+        contact@swanprivatecapital.com
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="bottom-section"></div>
+
+  <!-- Footer Banner -->
+  <div class="footer-banner">
+    True Self Capital. All Rights Reserved.
+  </div>
+
+  <script>
+    fetch('content.txt')
+      .then(response => response.text())
+      .then(text => {
+        document.getElementById('floating-banner').textContent = text;
+      })
+      .catch(error => {
+        console.error('Error loading content:', error);
+      });
+  </script>
+</body>
+</html>
